@@ -29,6 +29,6 @@ heuristics:
     description: AutoIt script extracted from compiled script
 
 docker_config:
-  image: ghcr.io/nvisosecurity/assemblyline-service-autoit-ripper:main
+  image: ${REGISTRY}cccs/assemblyline-service-apkaye:$SERVICE_TAG
   cpu_cores: 1
   ram_mb: 256
