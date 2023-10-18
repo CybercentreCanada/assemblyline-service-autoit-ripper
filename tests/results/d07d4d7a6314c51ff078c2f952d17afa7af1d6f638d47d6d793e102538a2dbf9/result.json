@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "AutoIt script extracted from compiled script",
+        "body": null,
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -20,7 +20,7 @@
         },
         "promote_to": null,
         "tags": {},
-        "title_text": "Extracted decompiled AutoIt script from compiled script",
+        "title_text": "Extracted AutoIt script from compiled script",
         "zeroize_on_tag_safe": false
       }
     ]

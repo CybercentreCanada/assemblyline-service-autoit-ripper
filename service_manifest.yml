@@ -23,7 +23,7 @@ heuristics:
     filetype: executable/windows/(dll32|dll64|pe32|pe64)
     description: AutoIt script extracted from a PE file
   - heur_id: 2
-    name: Extracted decompiled AutoIt script from compiled script
+    name: Extracted AutoIt script from compiled script
     score: 100
     filetype: code/a3x
     description: AutoIt script extracted from compiled script

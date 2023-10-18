@@ -44,6 +44,6 @@ class AutoItRipper(ServiceBase):
                 heur = Heuristic(1)
             else:
                 heur = Heuristic(2)
-            _ = ResultSection(heur.name, heur.description, heuristic=heur, parent=result)
+            _ = ResultSection(heur.name, heuristic=heur, parent=result)
 
         request.result = result
