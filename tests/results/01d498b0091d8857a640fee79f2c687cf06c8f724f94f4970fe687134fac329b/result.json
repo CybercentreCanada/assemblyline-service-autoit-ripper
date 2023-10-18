@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "AutoIt script extracted from a PE file",
+        "body": null,
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
