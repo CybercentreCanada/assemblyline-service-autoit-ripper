@@ -2,7 +2,7 @@ name: AutoItRipper
 version: $SERVICE_TAG
 description: Extract AutoIt scripts embedded in PE binaries and compiled AutoIt files
 
-accepts: executable/windows/.*|code/a3x
+accepts: executable/windows/(dll32|dll64|pe32|pe64)|code/a3x
 rejects: empty|metadata/.*
 
 stage: CORE
@@ -20,7 +20,7 @@ heuristics:
   - heur_id: 1
     name: Extracted AutoIt script from PE file
     score: 100
-    filetype: executable/windows/.*
+    filetype: executable/windows/(dll32|dll64|pe32|pe64)
     description: AutoIt script extracted from a PE file
   - heur_id: 2
     name: Extracted decompiled AutoIt script from compiled script

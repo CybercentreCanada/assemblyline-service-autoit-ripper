@@ -13,7 +13,9 @@ class AutoItRipper(ServiceBase):
     def execute(self, request):
         result = Result()
 
-        if request.file_type.startswith("executable/windows/"):
+        if request.file_type.startswith("executable/windows/dll") or request.file_type.startswith(
+            "executable/windows/pe"
+        ):
             content_list = autoit_ripper.extract(data=request.file_contents)
             if content_list:
                 content = content_list[0][1].decode("utf-8")
@@ -36,7 +38,9 @@ class AutoItRipper(ServiceBase):
                 was_decompiled_script_extracted = True
 
         if was_decompiled_script_extracted:
-            if request.file_type.startswith("executable/windows/"):
+            if request.file_type.startswith("executable/windows/dll") or request.file_type.startswith(
+                "executable/windows/pe"
+            ):
                 heur = Heuristic(1)
             else:
                 heur = Heuristic(2)
