@@ -1,0 +1,48 @@
+{
+  "extra": {
+    "drop_file": false,
+    "score": 100,
+    "sections": [
+      {
+        "auto_collapse": false,
+        "body": "AutoIt script extracted from a PE file",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": {
+          "attack_ids": [],
+          "frequency": 1,
+          "heur_id": 1,
+          "score": 100,
+          "score_map": {},
+          "signatures": {}
+        },
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Extracted AutoIt script from PE file",
+        "zeroize_on_tag_safe": false
+      }
+    ]
+  },
+  "files": {
+    "extracted": [
+      {
+        "name": "script.au3",
+        "sha256": "d94d4a28e1d85988ec29f52aa9aa2e7f4310d4be3827cf1a473f9c4c4e5d5af3"
+      }
+    ],
+    "supplementary": []
+  },
+  "results": {
+    "heuristics": [
+      {
+        "attack_ids": [],
+        "heur_id": 1,
+        "signatures": []
+      }
+    ],
+    "tags": {},
+    "temp_submission_data": {}
+  }
+}

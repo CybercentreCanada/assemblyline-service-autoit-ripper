@@ -1,0 +1,34 @@
+name: AutoItRipper
+version: $SERVICE_TAG
+description: Extract AutoIt scripts embedded in PE binaries and compiled AutoIt files
+
+accepts: executable/windows/.*|code/a3x
+rejects: empty|metadata/.*
+
+stage: CORE
+category: Extraction
+
+file_required: true
+timeout: 120
+disable_cache: false
+
+enabled: true
+is_external: false
+licence_count: 0
+
+heuristics:
+  - heur_id: 1
+    name: Extracted AutoIt script from PE file
+    score: 100
+    filetype: executable/windows/.*
+    description: AutoIt script extracted from a PE file
+  - heur_id: 2
+    name: Extracted decompiled AutoIt script from compiled script
+    score: 100
+    filetype: code/a3x
+    description: AutoIt script extracted from compiled script
+
+docker_config:
+  image: ghcr.io/nvisosecurity/assemblyline-service-autoit-ripper:main
+  cpu_cores: 1
+  ram_mb: 256
