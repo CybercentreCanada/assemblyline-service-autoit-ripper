@@ -12,11 +12,17 @@ class AutoItRipper(ServiceBase):
 
     def execute(self, request):
         result = Result()
+        request.result = result
 
         if request.file_type.startswith("executable/windows/dll") or request.file_type.startswith(
             "executable/windows/pe"
         ):
-            content_list = autoit_ripper.extract(data=request.file_contents)
+            try:
+                content_list = autoit_ripper.extract(data=request.file_contents)
+            except AttributeError:
+                # If the PE file cannot be parsed, then we can do nothing with it
+                return
+
             if content_list:
                 content = content_list[0][1].decode("utf-8")
                 decompiled_script_path = os.path.join(self.working_directory, "script.au3")
@@ -45,5 +51,3 @@ class AutoItRipper(ServiceBase):
             else:
                 heur = Heuristic(2)
             _ = ResultSection(heur.name, heuristic=heur, parent=result)
-
-        request.result = result

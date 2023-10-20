@@ -9,7 +9,7 @@ stage: CORE
 category: Extraction
 
 file_required: true
-timeout: 120
+timeout: 60
 disable_cache: false
 
 enabled: true
